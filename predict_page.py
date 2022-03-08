@@ -1,8 +1,6 @@
 import streamlit as st
 import pickle
 import numpy as np
-from sklearn.ensemble import VotingClassifier
-from xgboost import XGBClassifier
 
 
 def load_model():
