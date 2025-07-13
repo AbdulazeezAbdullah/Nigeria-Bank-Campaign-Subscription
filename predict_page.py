@@ -1,7 +1,20 @@
-import streamlit as st
-import pickle
-import numpy as np
 
+
+import streamlit as st
+import sys
+import numpy as np
+import sklearn
+
+# Version check - must be at the VERY TOP
+if np.__version__ != "1.21.6" or sklearn.__version__ != "0.24.2":
+    st.error(f"""
+    ⚠️ Incompatible versions detected!
+    - numpy: {np.__version__} (required: 1.21.6)
+    - scikit-learn: {sklearn.__version__} (required: 0.24.2)
+    """)
+    sys.exit(1)
+
+# Rest of your existing code...
 
 def load_model():
     with open('Gradient_Boost_Model.pkl', 'rb') as file:
