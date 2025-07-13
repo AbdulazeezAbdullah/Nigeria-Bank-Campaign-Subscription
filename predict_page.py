@@ -1,7 +1,7 @@
 
 
 import streamlit as st
-import pickle
+import joblib
 import sys
 import numpy as np
 import sklearn
@@ -9,7 +9,7 @@ import sklearn
 
 def load_model():
     with open('Gradient_Boost_Model.pkl', 'rb') as file:
-        model = pickle.load(file)
+        model = joblib.load(file)
     return model
 
 data = load_model()
